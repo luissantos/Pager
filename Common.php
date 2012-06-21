@@ -1614,8 +1614,8 @@ class Pager_Common
                 trigger_error($this->errorMessage(ERROR_PAGER_INVALID_USAGE), E_USER_WARNING);
             }
         }
-        if (substr($this->_url, 0, 2) == '//') {
-            $this->_url = substr($this->_url, 1);
+        if (substr($this->_url, -2) == '//') {
+            $this->_url = substr($this->_url,0,-1);
         }
         if (false === strpos($this->_altPage, '%d')) {
             //by default, append page number at the end
